@@ -7,7 +7,11 @@ const Sidebar = () => {
     <div className=' '>
 
       <div>
-        
+        <NavLink to={'/add'} >
+        <img src={assets.add_icon} alt='' />
+        <p>Add items</p>
+        </NavLink>
+      </div>
 
     </div>
   )
