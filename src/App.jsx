@@ -9,6 +9,7 @@ import Orders from './pages/Orders'
 const App = () => {
   return (
     <div className='bg-gray-50 min-h-screen'>
+      
       <>
       <Navbar />
       <hr />
