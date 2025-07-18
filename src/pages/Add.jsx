@@ -65,6 +65,39 @@ const Add = () => {
         </div>
         
       </div>
+
+      <div>
+        <p className='mb-2'>Product sizes</p>
+        <div className='flex gap-3'>
+          <div>
+            <p className='bg-slate-200 px-3 py-1 cursor-pointer'>S</p>
+          </div>
+
+          <div>
+            <p className='bg-slate-200 px-3 py-1 cursor-pointer'>M</p>
+          </div>
+
+          <div>
+            <p className='bg-slate-200 px-3 py-1 cursor-pointer'>L</p>
+          </div>
+
+          <div>
+            <p className='bg-slate-200 px-3 py-1 cursor-pointer'>XL</p>
+          </div>
+
+          <div>
+            <p className='bg-slate-200 px-3 py-1 cursor-pointer'>XXL</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div className='flex gap-2 mt-2'>
+        <input  type='checkbox' id='bestseller' />
+        <label className='cursor-pointer' htmlFor='bestseller'>Add to bestseller</label>
+      </div>
+
+      <button  type='submit' className='w-28 py-3 mt-4 bg-black text-white'>Add</button>
       
     </form>
   )
