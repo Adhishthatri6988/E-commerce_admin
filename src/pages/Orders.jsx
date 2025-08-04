@@ -36,22 +36,22 @@ const Orders = ({ token }) => {
       <h3>Order Page</h3>
       <div>
         {orders.map((orders, index) => (
-          <div key={index}>
-            <img src={assets.parcel_icon} />
+          <div className='grid grid-cols-1 sm:grid-cols-[0.5fr_2fr_1fr] lg:grid-cols-[0.5fr_2fr_1fr_1fr_1fr] gap-3 items-start border-2 border-gray-200 p-5 md:p-8 my-3 md:my-4 text-xs sm:text-sm text-gray-700' key={index}>
+            <img className='w-12' src={assets.parcel_icon} />
             <div>
               <div>
                 {orders.items.map((item, index) => {
                   if (index === orders.items.length - 1) {
                     //last item
                     return (
-                      <p key={index}>
+                      <p className='py-0.5' key={index}>
                         {item.name} X {item.quantity}
                         <span>{item.size}</span>
                       </p>
                     );
                   } else {
                     return (
-                      <p key={index}>
+                      <p className='py-0.5' key={index}>
                         {item.name} X {item.quantity}
                         <span>{item.size}</span> ,
                       </p>
@@ -59,7 +59,7 @@ const Orders = ({ token }) => {
                   }
                 })}
               </div>
-              <p>{orders.address.firstName + " " + orders.address.lastName}</p>
+              <p className='mt-3 mb-2 font-medium'>{orders.address.firstName + " " + orders.address.lastName}</p>
               <div>
                 <p>{orders.address.street + ","} </p>
                 <p>
@@ -75,16 +75,16 @@ const Orders = ({ token }) => {
               <p>{orders.address.phone}</p>
             </div>
 
-            //show method , qnty 
+            
             <div>
-              <p>Items: {orders.items.length}</p>
-              <p>Method: {orders.paymentMethod}</p>
-              <p>Payment: {orders.payment? 'Done' : "Pending"}</p>
-              <p>Date: {new Date(orders.date).toLocaleDateString}</p>
+              <p className="text-sm sm:text-[15px]">Items: {orders.items.length}</p>
+              <p className="mt-3">Method: {orders.paymentMethod}</p>
+              <p className=""> Payment: {orders.payment? 'Done' : "Pending"}</p>
+              <p className="">Date: {new Date(orders.date).toLocaleDateString()}</p>
             </div>
-            //order amount
-            <p>{currency} {orders.amount}</p>
-            <select>
+            
+            <p className="text-sm sm:text-[15px]">{currency} {orders.amount}</p>
+            <select value={orders.status} className="p-2 font-semibold">
               <option value="Order Placed">Order Placed</option>
               <option value="Packing">Packing</option>
               <option value="Shipped">Shipped</option>
