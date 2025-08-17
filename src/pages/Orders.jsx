@@ -18,11 +18,12 @@ const Orders = ({ token }) => {
         { headers: { token } }
       );
 
-      if (response.data.success) {
-        setOrders(response.data.orders);
-      } else {
-        toast.error(response.data.message);
-      }
+        if (response.data.success) {
+          setOrders(response.data.orders.reverse()); // Reverse the order to show the latest first
+        } else {
+          toast.error(response.data.message);
+        }
+
     } catch (error) {
       toast.error(error.message);
     }
